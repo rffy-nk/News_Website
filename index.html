@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita Terkini</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="progress"></div>
+
+    <!-- Layar pembuka -->
+    <div id="preloader">
+        <div class="pre-isi">
+            <p class="pre-kecil">Edisi digital</p>
+            <h2 id="pre-judul"></h2>
+            <div class="pre-garis"><span id="pre-isi"></span></div>
+            <p class="pre-status">Sedang mengambil berita terbaru</p>
+        </div>
+    </div>
+
+    <header class="kepala">
+        <div class="kepala-atas a">
+            <span>Edisi digital</span>
+            <div class="kepala-kanan">
+                <span id="tanggal"></span>
+                <button type="button" id="tema" aria-pressed="false">Mode gelap</button>
+            </div>
+        </div>
+        <div class="kepala-judul">
+            <h1 id="judul"></h1>
+            <p class="kepala-bawah a">Kumpulan kabar terbaru dari CNN Indonesia</p>
+        </div>
+    </header>
+
+    <nav class="navbar" aria-label="Jenis berita">
+        <div class="nav-jalur a" id="nav-jalur">
+            <span class="nav-indikator" id="nav-indikator"></span>
+        </div>
+
+        <form class="cari a" id="form-cari" role="search" autocomplete="off">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+            <input id="cari" type="search" placeholder="Cari berita..." aria-label="Cari berita" spellcheck="false">
+            <kbd>/</kbd>
+            <button type="button" id="cari-hapus" aria-label="Hapus pencarian">&times;</button>
+        </form>
+    </nav>
+
+    <div class="ticker a" aria-label="Judul sekilas">
+        <span class="ticker-label">Sekilas</span>
+        <div class="ticker-jalur">
+            <div id="ticker-isi"></div>
+        </div>
+    </div>
+
+    <main>
+        <div class="seksi-kepala a">
+            <h2 id="seksi-nama"></h2>
+            <span id="seksi-info"></span>
+        </div>
+
+        <div class="cari-opsi" id="cari-opsi" hidden>
+            <span>Cari di</span>
+            <button type="button" data-scope="ini" class="aktif">Jenis ini</button>
+            <button type="button" data-scope="semua">Semua jenis</button>
+        </div>
+
+        <div id="berita"></div>
+    </main>
+
+    <button type="button" id="naik" aria-label="Kembali ke atas">
+        <svg viewBox="0 0 44 44" aria-hidden="true">
+            <circle class="trek" cx="22" cy="22" r="19"/>
+            <circle class="cincin" id="cincin" cx="22" cy="22" r="19"/>
+            <path d="M22 29V15M15 21.5l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
